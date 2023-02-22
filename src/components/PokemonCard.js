@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 
-function PokemonCard({ url, name }) {
+function PokemonCard({ name }) {
 	// initialize state
-	const [pokemon, setPokemon] = useState([]);
+	const [pokemon, setPokemon] = useState(null);
 
 	// useEffect to fetch the data
 	useEffect(() => {
@@ -17,9 +18,9 @@ function PokemonCard({ url, name }) {
 	}, [name]);
 
 	return (
-		<div>
-			Pokemon Card
-		</div>
+		<Card>
+			<Card.Title>{name}</Card.Title>
+		</Card>
 	);
 }
 

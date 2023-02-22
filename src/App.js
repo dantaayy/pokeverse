@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { PokemonCard } from './components/PokemonCard';
-import { useState, useEffect } from 'react';
 
 const LIMIT = 150;
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/?limit=${LIMIT}`;
@@ -30,7 +29,7 @@ function App() {
 			{
 				// Map over pokemonList that is set by the useEffect
 				pokemonList.map((pokemon) =>
-					<PokemonCard name={pokemon.name} />
+					<PokemonCard key={pokemon.name} name={pokemon.name} />
 				)
 			}
 
